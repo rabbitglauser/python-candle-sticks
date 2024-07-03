@@ -22,6 +22,15 @@ fig.update_layout(
 )
 
 class DailyAverage:
+    """
+    DailyAverage class calculates the daily average of a given dataframe.
+
+    Attributes:
+        df: A pandas DataFrame.
+
+    Methods:
+        __init__(): Initializes the DailyAverage class.
+    """
     def __init__(self , df):
         df = pd.read_csv('https://raw.githubusercontent.com')
         df['vals'] = np.random.randint(1, 6, df.shape[0])
