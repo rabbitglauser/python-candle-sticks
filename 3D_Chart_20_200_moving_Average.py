@@ -85,10 +85,12 @@ def sell():
 # Add Buy button
 buy_button = tk.Button(root, text="Buy", command=buy)
 buy_button.pack(side=tk.LEFT, padx=20, pady=20)
+buy_button.config(bg="lightgreen")
 
 # Add Sell button
 sell_button = tk.Button(root, text="Sell", command=sell)
 sell_button.pack(side=tk.RIGHT, padx=20, pady=20)
+sell_button.config(bg="red")
 
 # Run the Tkinter event loop
 root.mainloop()
