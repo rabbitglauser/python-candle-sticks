@@ -22,25 +22,11 @@ fig.update_layout(
 )
 
 class DailyAverage:
-    def __init__(self, url):
-        self.df = pd.read_csv(url)
-        self.df['vals'] = np.random.randint(1, 6, self.df.shape[0])
-        # Assuming 'Date' is a column with date information in a format that pandas can parse.
-        self.df['Date'] = pd.to_datetime(self.df['Date'])
-        self.df.set_index('Date', inplace=True)
+    def __init__(self , df):
+        df = pd.read_csv('https://raw.githubusercontent.com')
+        df['vals'] = np.random.randint(1, 6, df.shape[0])
 
-    def average_by_day_of_year(self):
-        return self.df.groupby(self.df.index.strftime("%j")).mean()
-
-    def average_by_date(self):
-        return self.df.groupby(self.df.index.strftime("%m%d")).mean()
-
-
-# Usage:
-
-# Replace 'your_url' with your actual CSV URL
-your_url = 'https://raw.githubusercontent.com/user/repo/file.csv'
-daily_avg = DailyAverage(your_url)
-print(daily_avg.average_by_day_of_year())
-print(daily_avg.average_by_date())
+# output
+print(df.groupby(df.index.strftime("%j").mean()))
+print(df.groupby(df.index.strftime("%m%d")).mean())
 fig.show()
