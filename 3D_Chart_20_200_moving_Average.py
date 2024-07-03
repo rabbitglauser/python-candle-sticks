@@ -1,7 +1,7 @@
 import plotly.graph_objects as go
 import pandas as pd
 import tkinter as tk
-import numpy as np
+from tkinter import messagebox
 
 # Load the dataset from a public URL
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
@@ -68,5 +68,26 @@ fig.update_layout(
     )
 )
 
-# Display the chart
+# Display the chart in a browser
 fig.show()
+
+# Create the Tkinter GUI
+root = tk.Tk()
+root.title("Stock Trading Interface")
+
+def buy():
+    messagebox.showinfo("Buy", "Buy action triggered!")
+
+def sell():
+    messagebox.showinfo("Sell", "Sell action triggered!")
+
+# Add Buy button
+buy_button = tk.Button(root, text="Buy", command=buy)
+buy_button.pack(side=tk.LEFT, padx=20, pady=20)
+
+# Add Sell button
+sell_button = tk.Button(root, text="Sell", command=sell)
+sell_button.pack(side=tk.RIGHT, padx=20, pady=20)
+
+# Run the Tkinter event loop
+root.mainloop()
