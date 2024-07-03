@@ -74,6 +74,7 @@ fig.show()
 # Create the Tkinter GUI
 root = tk.Tk()
 root.title("Stock Trading Interface")
+root.configure(bg="lightblue")
 
 def buy():
     messagebox.showinfo("Buy", "Buy action triggered!")
